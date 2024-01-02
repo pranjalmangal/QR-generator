@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>QR Code Generator</title>
+</head>
+<body>
+    <header>
+        <h1>QR Code Generator</h1>
+    </header>
+
+    <div class="container">
+        <p>QR (Quick Response) codes are versatile tools that can store various types of information. They have become an integral part of modern life, simplifying tasks and providing quick access to content. Use the QR Code Generator to create codes for links or images effortlessly.</p>
+
+        <form action="/generate_qr" method="post">
+            <label for="content_type">Select content type:</label>
+            <select id="content_type" name="content_type" required>
+                <option value="link">Link</option>
+                <option value="image">Image</option>
+            </select>
+
+            <label for="content">Enter the content:</label>
+            <input type="text" id="content" name="content" required>
+
+            <button type="submit">Generate QR Code</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 QR Code Generator. All rights reserved.</p>
+    </footer>
+</body>
+</html>
